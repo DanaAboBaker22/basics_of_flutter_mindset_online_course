@@ -2,6 +2,7 @@ import 'package:counter_example/auth/ui/login_page.dart';
 import 'package:counter_example/bloc/counter_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:counter_example/auth/ui/otp_verifiction.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,14 +14,15 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
+    /* return BlocProvider(
       create: (context) => CounterBloc(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
-        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-        home: LoginPage(),
-      ),
+        theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)), */
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: OtpVerificationScreen(),
     );
   }
 }
@@ -85,8 +87,8 @@ class MyHomePage extends StatelessWidget {
                 //     style: TextStyle(fontSize: 32),
                 //   );
                 // } else
-                
-                 if (state is TheCounterHasBeenEditied) {
+
+                if (state is TheCounterHasBeenEditied) {
                   return Text(
                     state.counter.toString(),
                     style: TextStyle(fontSize: 32),
